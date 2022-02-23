@@ -1,0 +1,71 @@
+@host = http://127.0.0.1
+@porta = 8000
+@url  ={{host}}:{{porta}}
+@numeroDestino= "554899999999"
+@mensagemTeste = "Mensagem de Teste 123 é acentuação com quebra e emoji 😱😱😱"
+
+### SEND MESSAGE
+POST {{url}}/send-message HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+	"message": {{mensagemTeste}}
+}
+
+### SEND BUTTONS
+POST {{url}}/send-button HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+	"message": {{mensagemTeste}},
+    "displayText1": "Sim",
+    "displayText2": "Não",
+    "displayText3": "Talvez",
+    "contentText": "Teste Content",
+    "footerText": "Teste Footer"
+}
+
+
+### SEND LIST
+POST {{url}}/send-list HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+    "row1":"Titulo 01",
+    "row2":"Titulo 02",
+    "description1":"Description 01",
+    "description2":"Description 02",
+    "title":" Titulos",
+    "buttonText":"Botao texto",
+    "description":"Descricao"
+}
+
+### SEND VCARD
+POST {{url}}/send-vcard HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+    "Vname":"Nome do fulano",
+    "Vorg":"Organização"
+    
+}
+### SEND VCARD
+POST {{url}}/send-vcard2 HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+	"numberCard": "5548999991234",
+    "Vname":"Nome do fulano",
+    "Vorg":"Organização"
+    
+}
+
+### TODO TESTE ROTAS
+# /send-image
+# /send-audio
+# /send-video

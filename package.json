@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@adiwajshing/baileys": "^3.5.3",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "http": "^0.0.1-security",
+    "mysql2": "^2.3.3"
+  }
+}
